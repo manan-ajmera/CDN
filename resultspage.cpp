@@ -157,6 +157,8 @@ void ResultsPage::on_pushButton_2_clicked()
     std::pair<Movie*,std::string> req= manager.requestMovie(requested_movie , UserX , UserY , 30);
 
     ui->label_4->setText(QString::fromStdString(req.second));
+    if(req.first == nullptr)
+        return;
     QPixmap pixmap(QString::fromStdString(req.first->getPoster()));
 
     // Check if the image exists and is valid
@@ -168,7 +170,9 @@ void ResultsPage::on_pushButton_2_clicked()
         // Handle case where the image is not found
         ui->label_5->setText("Image not found");
     }
-
+    std::vector<Movie*> popMovies = manager.getTopMoviesForNode(top);
+    QStringList moviePaths = getImagePaths(popMovies);
+    displayImages(moviePaths);
 }
 
 void ResultsPage::on_pushButton_clicked()

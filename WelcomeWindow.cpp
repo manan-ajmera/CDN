@@ -11,6 +11,7 @@ WelcomeWindow::WelcomeWindow(QWidget *parent)
 
     QIntValidator *intValidator = new QIntValidator(0, 200, this);
     ui->UserX->setValidator(intValidator);
+    ui->UserY->setValidator(intValidator);
     // connect(ui->submitcordsbtn, &QPushButton::clicked, this, &WelcomeWindow::on_submitcordsbtn_clicked);
 }
 

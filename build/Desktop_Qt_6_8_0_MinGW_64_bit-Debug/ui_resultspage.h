@@ -35,11 +35,11 @@ public:
     {
         if (ResultsPage->objectName().isEmpty())
             ResultsPage->setObjectName("ResultsPage");
-        ResultsPage->resize(931, 451);
+        ResultsPage->resize(963, 461);
         ResultsPage->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
         label = new QLabel(ResultsPage);
         label->setObjectName("label");
-        label->setGeometry(QRect(350, 80, 691, 31));
+        label->setGeometry(QRect(350, 70, 691, 41));
         label_2 = new QLabel(ResultsPage);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(210, 30, 101, 41));
@@ -61,10 +61,12 @@ public:
         pushButton_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_4 = new QLabel(ResultsPage);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(40, 320, 181, 91));
+        label_4->setGeometry(QRect(40, 320, 321, 91));
+        label_4->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_5 = new QLabel(ResultsPage);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(30, 190, 221, 121));
+        label_5->setGeometry(QRect(30, 190, 371, 111));
+        label_5->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_6 = new QLabel(ResultsPage);
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(20, 20, 161, 111));
@@ -82,7 +84,7 @@ public:
         pushButton->setText(QCoreApplication::translate("ResultsPage", "Change Location", nullptr));
         label_3->setText(QCoreApplication::translate("ResultsPage", "<html><head/><body><p><span style=\" font-size:8pt; font-style:italic; color:#ffffff;\">Search For Movies :</span></p></body></html>", nullptr));
         pushButton_2->setText(QCoreApplication::translate("ResultsPage", "Search", nullptr));
-        label_4->setText(QCoreApplication::translate("ResultsPage", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\"><br/></span></p></body></html>", nullptr));
+        label_4->setText(QCoreApplication::translate("ResultsPage", "<html><head/><body><p><span style=\" font-size:26pt; color:#ffffff;\"><br/></span></p></body></html>", nullptr));
         label_5->setText(QString());
         label_6->setText(QCoreApplication::translate("ResultsPage", "TextLabel", nullptr));
     } // retranslateUi

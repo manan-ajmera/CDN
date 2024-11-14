@@ -82,8 +82,10 @@ void CDNManager::initializeCDNNodeWithPopularMovies(CDNNode* cdnNode, int numMov
         int randomIndex = std::rand() % allMovies.size();
         randomMovies.push_back(allMovies[randomIndex]);
     }
-
+    int i =10;
     for (Movie* movie : randomMovies) {
+        std::string r = getKeyFromValue(cdnNodes, cdnNode) + "_" + movie->getName();
+        requestCount[r] = i++;
         cdnNode->storePopularMovie(movie);
     }
 }
@@ -126,7 +128,7 @@ std::pair<Movie*, std::string> CDNManager::requestMovie(const std::string& movie
         if (movie) {
             std::string requestKey = getKeyFromValue(cdnNodes, node) + "_" + movieName;
             requestCount[requestKey]++;
-            std::string s = "Movie found in server at location" + std::to_string(node->getX())+" "+std::to_string(node->getY())+" in "+ std::to_string(0.001*nodesInRange.top().second);
+            std::string s = "Movie found in server at location" + std::to_string(static_cast<int>(node->getX()))+" "+std::to_string(static_cast<int>(node->getY()));
             return make_pair(movie,s);  // Return if found in CDN node
         }
     }
